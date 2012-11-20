@@ -20,3 +20,4 @@ panda.load(sample2);
 //panda.execute(panda.load('a="1"\nb="2"\nc=b'));
 panda.execute(panda.load('a="hello there"\nb="another"\nc=[a,b]'));
 console.log(panda.lookup('c'));
+console.log(panda.symbols());
