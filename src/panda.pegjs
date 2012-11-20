@@ -13,22 +13,38 @@
   var COMMENT   = 'rem';
   var EQ        = '=';
   var STRING    = 'str';
+  var LIST      = 'lst';
 }
 
 start
-  = b:expression                             { return {ast:b}; }
+  = __ b:expression                          { return {ast:b}; }
 
 expression
-  = t:assignmentExpression                   { return t; }
-  / __
+  = t:assignmentExpression*                  { return t; }
 
 assignmentExpression
-  = id:identifier __ EQ __ val:stringLiteral { return [EQ, id, val]; }
+  = id:identifier __ EQ val:value            { return [EQ, id, val]; }
+
+value
+  = __ s:string __                           { return s; }
+  / __ a:array __                            { return a; }
+  / __ i:identifier __                       { return i; }
+
+array
+  = "[" __ "]"                               { return [LIST,[]]; }
+  / "[" v:list "]"                           { return [LIST,v]; }
+
+list
+  = first:value rest:("," value)*  {
+  var r = [first];
+  for(var i=0;i<rest.length;i++) r.push(rest[i][1]);
+  return r;
+}
 
 identifier
   = h:[a-zA-Z_$?\.] t:[0-9a-zA-Z_$?\.]*      { return (h + t.join('')).trim(); }
 
-stringLiteral
+string
   = '"' content:([^"\\] / "\\" c:.{return c;} )* '"' 
 {
   var tmpl=bigote.load(content.join(''));

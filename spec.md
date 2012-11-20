@@ -3,6 +3,7 @@
 ## Variables
  * a=x
  * a="hello"
+ * a="This is mushtache {{var}}"
 
 ## Comments
 
