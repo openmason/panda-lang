@@ -69,8 +69,30 @@ Another example with multiple functions
     a,b=numbers<<2; // assign 300,4
 
 
-
 ## Rough Work
+
+ * Basic types
+   * bit
+   * byte
+   * with semantics
+     * bool
+     * int
+     * real
+     * char (could represent a unicode char or ascii char based on encoding)
+   * data structure
+     * set
+     * array
+     * hash
+   * function
+   * expression/predicate
+   * array 
+     * string (char array)
+   * lazy list
+     * list could be unbounded, only on iteration would produce result
+     * unbounded ranges
+
+ * variable
+   * type, predicates, default value
 
  * problem is with error handling, where every if is checked
    and every result is checked for error cases 

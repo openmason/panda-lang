@@ -15,3 +15,7 @@ Begins with /* and ends with */
 ### Single line comments
 Any thing after // is treated as comment
 
+## List
+  * tally
+  * length
+  * 

@@ -1,4 +1,4 @@
-# release 0.0.3
+# release 0.0.6
  * assignment and basic list ops
  * basic string as mushtache assignment
  * initial repository creation
