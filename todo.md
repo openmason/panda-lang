@@ -25,8 +25,10 @@ Full scale functions can be written as
       return prod;
     }
 
-## Comments
-Javascritp/C/C++/Java style comments apply
+## Data structures
+
+### Set
+
 
 ## Serial, Parallel calls
 
@@ -62,6 +64,30 @@ Another example with multiple functions
 
 
 ## Datastructures
+
+### Set
+
+#### Definition
+
+    set1 = {a, x, z}
+    set1 = {23, 35...45} // use of range
+    set1 = {} // empty set
+    { 2, 3, 4} == { 2, 3, 3, 4} == { 4, 3, 2} 
+    
+    // to come back
+    A = { x / x is a number bigger than 4 and smaller than 8} = { x:= >4 & <8 }
+    B = { x / x is a positive number smaller than 7}
+    
+#### Operations
+  * member (binary op - object, set)
+  * Subset (Proper subset)
+  * Union  
+  * Intersection
+  * Compliment  (Compliment of A in U)
+  * Difference (Symmetric difference)
+  * Cartesian product
+  * Power set
+  
 
 #### Split
 
@@ -133,29 +159,6 @@ char - displayable unit, has encoding
 * fn(predicate list) := { ... ; .. .; ... } 
 * fn(predicate list) := { ... , .. ., ... } 
 
-### Set
-
-#### Definition
-
-    set1 = {a, x, z}
-    set1 = {23, 35...45} // use of range
-    set1 = {} // empty set
-    { 2, 3, 4} == { 2, 3, 3, 4} == { 4, 3, 2} 
-    
-    // to come back
-    A = { x / x is a number bigger than 4 and smaller than 8} = { x:= >4 & <8 }
-    B = { x / x is a positive number smaller than 7}
-    
-#### Operations
-  * member (binary op - object, set)
-  * Subset (Proper subset)
-  * Union  
-  * Intersection
-  * Compliment  (Compliment of A in U)
-  * Difference (Symmetric difference)
-  * Cartesian product
-  * Power set
-  
 
 ### Probability
 

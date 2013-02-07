@@ -2,14 +2,14 @@
   "name": "panda-lang",
   "description": "panda language",
   "homepage": "https://github.com/openmason/panda-lang",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "el aras <openmason@gmail.com>",
   "dependencies": {
     "bigote"           : ">= 0.3.9",
     "handy"            : ">= 0.0.7"
   },
   "devDependencies": {
-    "mocha"            : ">= 1.6.0",
+    "mocha"            : ">= 1.8.1",
     "should"           : ">= 1.2.0"
   },
   "keywords": ["language", "panda"],
