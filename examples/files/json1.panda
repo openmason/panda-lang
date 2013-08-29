@@ -1,0 +1,2 @@
+atom={"title":"Hello", "subtitle":"World"}
+dummy="{{atom.title}},{{atom.subtitle}}"

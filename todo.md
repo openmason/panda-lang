@@ -1,5 +1,8 @@
 # Introduction
 
+# Pending items
+ * moving json parsing into separate pegjs file
+
 ## Variables
  * any string is mushtache compliant
  * $ is the current context
@@ -170,3 +173,68 @@ char - displayable unit, has encoding
   * arithmetic sequence (based on sum / difference)
   * geometric sequence (based on multiplication / division)
   
+
+### Brainstorm
+
+    if(condition) {
+      do some code
+    } 
+    truth value
+      > logical operators (and/or/not)
+      > relational operators (a > b < c)
+      > arithmetic operators
+    inline==true && fallback==false
+    
+    condition => action
+    
+    factorial(n) {
+      int f=1;
+      if(n<=1) return f;
+      for(i=2;i<n;i++) f*=i;
+      return n;
+    }
+    
+    // no loop and no if ?? 
+    
+
+    // find if a string is palindrome
+    // loop thru mid of the char index and do the diff
+    interface boolean palindrome(string);
+    palindrome:=false;
+    palindrome(str.trim()==""):=false;
+    palindrome(str?) {
+      lToR = [0..str.length/2];
+      rToL = [str.length..str.length/2];
+      elemCheck:=false;
+      elemCheck(char1?,char2?):=(char1==char2);
+      //lToR,rToL -> str[$]!=str[$1]?return false;
+      lToR,rToL => elemCheck($?str[$],$1?str[$1])?:return false;
+      return true;
+    }
+    
+    ?: ternary operator
+    ? just true clause
+    ?: just else clause
+    
+    # goal is to fire 100 requests to each of the 10 hosts at the same time
+    # fetching product data
+    //>>> GET :apibase/projects?from=:from&limit=:limit
+    interface list getProjects(from=0,limit=100);
+    
+    fireRequests(n<1):=false;
+    fireRequests(n) {
+      r=[1..n];
+      r=>getProjects();
+    }
+    
+    # data types
+    // int
+    // real
+    // str
+    
+    # unary operator ? 
+    - implies - is it present (not null)
+
+# Few minor things
+  * single quote or double quote, doesn't matter
+  * rest interface should be 

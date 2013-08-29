@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+/**
+ * bigote - copyright(c) 2013 openmason.
+ * MIT Licensed
+ * 
+ *  - panda language command line tool kit
+ */
+
+var panda = require('..');
+var handy = require('handy');
+var fs = require('fs');
+
+// panda <panda file>
+//
+var _versionString = 'panda v'+handy.getVersion();
+console.log(_versionString);
+console.log('Panda language toolkit.');
+/*
+process.argv.forEach(function (val, index, array) {
+  console.log(index + ': ' + val);
+});
+*/
+
+// compile the template and render it
+var ast = panda.load(fs.readFileSync(process.argv[2], 'utf-8'));
+console.log('AST:');
+console.log(ast);
+panda.execute(ast);
+console.log('Symbols after execution:');
+console.log(panda.symbols());
+
+// -- EOF

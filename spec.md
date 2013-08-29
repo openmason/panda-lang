@@ -14,10 +14,22 @@ Begins with /* and ends with */
 ### Single line comments
 Any thing after // is treated as comment
 
+## Cardinality operator
+ * # would be the length / size operator
+
+## Relational operators
+ * <, >, ==, <=, >=, !=
+ 
+## Arithmetic operators
+ * +,-,*,/,%
+ * unary +, -, % (return the %, for ex 20% is (0.2))
+ * +-, 
+
 ## Data Structures
+ * ||, <>, [], (), {} - are available markups
 
 ### Set
-Collection of elements.
+Collection of elements - as given within { .. }.
 
 #### Definition
 

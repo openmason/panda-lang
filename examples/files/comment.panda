@@ -1,0 +1,5 @@
+/* This is a sample comment
+   that spans multiple lines
+  */
+a="hi"
+// This is a single line comment

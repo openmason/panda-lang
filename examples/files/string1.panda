@@ -1,0 +1,5 @@
+// strings that carry mushtache syntax
+a="Hello"
+b="World"
+c="{{a}},{{b}}"
+
