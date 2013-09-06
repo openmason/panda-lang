@@ -16,6 +16,7 @@
   var OBJECT    = 'obj';
   var LIST      = 'lst';
   var NUMBER    = 'num';
+  var SIZE      = '#';
 
   /* --------------- range related -------------- */
   // this is a rudimentary start, to be moved out
@@ -27,8 +28,8 @@
         stop = start;
         start = 0;
     };
-    if (typeof step=='undefined'){
-        step = 1;
+    if (typeof step=='undefined') {
+        step = start>stop?-1:1;
     };
     if ((step>0 && start>=stop) || (step<0 && start<=stop)){
         return [];
@@ -63,7 +64,11 @@ expression
   = t:assignmentExpression*                  { return t; }
 
 assignmentExpression
-  = id:identifier __ EQ val:value            { return [EQ, id, val]; }
+  = id:identifier __ EQ v:unaryOp            { return [EQ, id, v]; }
+
+unaryOp
+  =  __ "#" v:value                          { return [SIZE, v]; }
+  / v1:value                                 { return v1; }
 
 value
   = __ s:string __                           { return s; }
@@ -77,8 +82,11 @@ array
   / "[" v:list "]"                           { return [LIST,v]; }
 
 literal
-  = (from:number __ ".." __ to:number        { return [LIST, range(from, to)]; })
-  /  value:number                            { return [NUMBER, value]; }
+  = r:range                                  { return r; }
+  / v:number                                 { return [NUMBER, v]; }
+
+range
+  = from:number __ ".." __ to:number         { return [LIST, range(from, to)]; }
 
 list
   = first:value rest:("," value)*  {
