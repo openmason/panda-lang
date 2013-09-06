@@ -1,6 +1,7 @@
-# release 0.1.1
- * added json value type 
+# release 0.1.2
+ * length operator # added
  * added number and basic range (int) support
+ * added json value type 
 # release 0.0.7
  * keep sources for reference as well
  * assignment and basic list ops
