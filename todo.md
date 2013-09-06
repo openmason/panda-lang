@@ -234,6 +234,9 @@ char - displayable unit, has encoding
     
     # unary operator ? 
     - implies - is it present (not null)
+    
+    # word count example
+    
 
 # Few minor things
   * single quote or double quote, doesn't matter

@@ -5,6 +5,12 @@
  * a="hello"
  * a="This is mushtache {{var}}"
 
+## Special 
+ * infinite is specified as '...'  
+   * example: 3... (3 to infinity)
+ * interval is specified with '..' where both the values are inclusive
+   * example 1..5 (1 to 5 both 1 and 5 are included)
+
 ## Comments
 Follows C/C++ style comments.
 

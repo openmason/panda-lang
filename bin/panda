@@ -24,7 +24,7 @@ process.argv.forEach(function (val, index, array) {
 // compile the template and render it
 var ast = panda.load(fs.readFileSync(process.argv[2], 'utf-8'));
 console.log('AST:');
-console.log(ast);
+console.log(JSON.stringify(ast));
 panda.execute(ast);
 console.log('Symbols after execution:');
 console.log(panda.symbols());

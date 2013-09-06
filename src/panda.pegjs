@@ -15,6 +15,30 @@
   var STRING    = 'str';
   var OBJECT    = 'obj';
   var LIST      = 'lst';
+  var NUMBER    = 'num';
+
+  /* --------------- range related -------------- */
+  // this is a rudimentary start, to be moved out
+  // to a set sort of an operation.
+
+  function range(start, stop, step) {
+    if (typeof stop=='undefined'){
+        // one param defined
+        stop = start;
+        start = 0;
+    };
+    if (typeof step=='undefined'){
+        step = 1;
+    };
+    if ((step>0 && start>=stop) || (step<0 && start<=stop)){
+        return [];
+    };
+    var result = [];
+    for (var i=start; step>0 ? i<=stop : i>=stop; i+=step){
+        result.push([NUMBER,i]);
+    };
+    return result;
+  };
 
   /* --------------- json related -------------- */
 
@@ -46,10 +70,15 @@ value
   / __ a:array __                            { return a; }
   / __ i:identifier __                       { return i; }
   / __ j:jsonObject __                       { return [OBJECT,j]; }
+  / __ l:literal __                          { return l; }
 
 array
   = "[" __ "]"                               { return [LIST,[]]; }
   / "[" v:list "]"                           { return [LIST,v]; }
+
+literal
+  = (from:number __ ".." __ to:number        { return [LIST, range(from, to)]; })
+  /  value:number                            { return [NUMBER, value]; }
 
 list
   = first:value rest:("," value)*  {
