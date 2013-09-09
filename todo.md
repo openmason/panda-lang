@@ -236,7 +236,20 @@ char - displayable unit, has encoding
     - implies - is it present (not null)
     
     # word count example
-    
+    x<-1..20,y<-x..x+5 : x*y==x*2*y
+
+# loops
+  * 1..10 -> do..something..
+  * i <- 1..10 -> do..something..where 'i' is the index
+  * i <- 1..10:i<8 -> do..something..where 'i' is the index, with condition
+  * 1..10, -30..1 -> do..something ... will have $ as an array
+  * i<- 1..10, j<- -30..1: i!==j -> do..something ... (with condition i!=j true)
+  * 1..10 -> 10..15 -> do..something..in..a..nested way
+  * i <- 1..10 -> j <- 10..15 -> do..something..in..a..nested way ... 'i' and 'j' available
+  * 1..10 -> _=$*2
+  
+  * results -> _="get {{.}}";
+
 
 # Few minor things
   * single quote or double quote, doesn't matter

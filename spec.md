@@ -6,7 +6,7 @@
  * a="This is mushtache {{var}}"
 
 ## Special 
- * infinite is specified as '...'  
+ * infinite is specified as '...'  (not yet supported)
    * example: 3... (3 to infinity)
  * interval is specified with '..' where both the values are inclusive
    * example 1..5 (1 to 5 both 1 and 5 are included)

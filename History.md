@@ -1,4 +1,5 @@
-# release 0.1.2
+# release 0.1.3
+ * -> operator added for looping 
  * length operator # added
  * added number and basic range (int) support
  * added json value type 

@@ -17,6 +17,7 @@
   var LIST      = 'lst';
   var NUMBER    = 'num';
   var SIZE      = '#';
+  var ITR       = '@';
 
   /* --------------- range related -------------- */
   // this is a rudimentary start, to be moved out
@@ -65,6 +66,7 @@ expression
 
 assignmentExpression
   = id:identifier __ EQ v:unaryOp            { return [EQ, id, v]; }
+  / id:identifier __ o:CTXT __ e:expression  { return [ITR, o, id, e]; }
 
 unaryOp
   =  __ "#" v:value                          { return [SIZE, v]; }
@@ -123,6 +125,10 @@ singleLineComment
 
 EQ
   = [=]
+
+CTXT
+  = "->"
+  / "=>"
 
 WS
   = [\t\v\f ]
