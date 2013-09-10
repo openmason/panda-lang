@@ -65,8 +65,11 @@ expression
   = t:assignmentExpression*                  { return t; }
 
 assignmentExpression
-  = id:identifier __ EQ v:unaryOp            { return [EQ, id, v]; }
-  / id:identifier __ o:CTXT __ e:expression  { return [ITR, o, id, e]; }
+  = __ id:identifier __ EQ v:complexExpr     { return [EQ, id, v]; }
+
+complexExpr
+  = v:value o:CTXT __ e:unaryOp              { return [ITR, o, v, e]; }
+  / v:unaryOp                                { return v; }
 
 unaryOp
   =  __ "#" v:value                          { return [SIZE, v]; }
